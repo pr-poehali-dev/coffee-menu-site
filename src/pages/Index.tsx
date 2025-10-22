@@ -18,6 +18,12 @@ const menuData = {
     { name: 'Капучино', description: 'Классический итальянский капучино с нежной молочной пенкой', price: 0 },
     { name: 'Латте', description: 'Нежный кофе с молоком и воздушной пенкой', price: 0 },
   ],
+  eggs: [
+    { name: 'Яичница обычная', description: 'Классическая глазунья из свежих яиц', price: 0 },
+    { name: 'Яичница с овощами', description: 'Яичница с помидорами, болгарским перцем и зеленью', price: 0 },
+    { name: 'Яичница с сыром', description: 'Сытная яичница с расплавленным сыром', price: 0 },
+    { name: 'Яичница запечённая', description: 'Запечённая в духовке яичница с хрустящей корочкой', price: 0 },
+  ],
   cocktails: [
     { name: 'Шоколадный коктейль', description: 'Насыщенный коктейль с бельгийским шоколадом и мороженым', price: 0 },
     { name: 'Молочный коктейль', description: 'Классический молочный коктейль с нежной пенкой', price: 0 },
@@ -66,6 +72,8 @@ export default function Index() {
     switch (category) {
       case 'coffee':
         return 'Coffee';
+      case 'eggs':
+        return 'Egg';
       case 'cocktails':
         return 'Wine';
       case 'salads':
@@ -111,10 +119,14 @@ export default function Index() {
         </header>
 
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full max-w-5xl mx-auto">
-          <TabsList className="grid w-full grid-cols-4 mb-8 bg-white/95 backdrop-blur-sm p-2 h-auto">
+          <TabsList className="grid w-full grid-cols-5 mb-8 bg-white/95 backdrop-blur-sm p-2 h-auto">
             <TabsTrigger value="coffee" className="flex flex-col items-center gap-2 py-3 data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary data-[state=active]:to-secondary data-[state=active]:text-white">
               <Icon name="Coffee" size={24} />
               <span className="text-sm md:text-base font-medium">Кофе</span>
+            </TabsTrigger>
+            <TabsTrigger value="eggs" className="flex flex-col items-center gap-2 py-3 data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary data-[state=active]:to-secondary data-[state=active]:text-white">
+              <Icon name="Egg" size={24} />
+              <span className="text-sm md:text-base font-medium">Яичница</span>
             </TabsTrigger>
             <TabsTrigger value="cocktails" className="flex flex-col items-center gap-2 py-3 data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary data-[state=active]:to-secondary data-[state=active]:text-white">
               <Icon name="Wine" size={24} />
@@ -143,6 +155,7 @@ export default function Index() {
                         <div className="flex items-center gap-3">
                           <div className="text-3xl">
                             {category === 'coffee' && '☕'}
+                            {category === 'eggs' && '🍳'}
                             {category === 'cocktails' && '🍹'}
                             {category === 'salads' && '🥗'}
                             {category === 'juices' && '🧃'}
