@@ -90,14 +90,6 @@ export default function Index() {
 
       <div className="container mx-auto px-4 py-8 relative z-10">
         <header className="text-center mb-12 animate-fade-in">
-          <div className="flex justify-end mb-4">
-            <Link to="/orders">
-              <Button variant="outline" className="bg-white/95 hover:bg-white flex items-center gap-2">
-                <Icon name="ClipboardList" size={20} />
-                Управление заказами
-              </Button>
-            </Link>
-          </div>
           <div className="flex justify-center items-center gap-3 mb-4">
             <span className="text-6xl">☕</span>
             <h1 className="text-6xl md:text-7xl font-bold text-white drop-shadow-lg">
@@ -169,6 +161,11 @@ export default function Index() {
 
         <footer className="text-center mt-16 text-white/80">
           <p className="text-lg">🎅 С Новым Годом от команды Кофе 55! 🎁</p>
+          <Link to="/orders">
+            <Button variant="ghost" className="text-white/30 hover:text-white/50 text-xs mt-4">
+              •
+            </Button>
+          </Link>
         </footer>
       </div>
     </div>
