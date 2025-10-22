@@ -89,6 +89,14 @@ export default function Index() {
       />
 
       <div className="container mx-auto px-4 py-8 relative z-10">
+        <div className="absolute top-4 left-4">
+          <Link to="/orders">
+            <Button variant="ghost" className="text-white/30 hover:text-white/60 text-2xl p-2 h-auto">
+              •
+            </Button>
+          </Link>
+        </div>
+        
         <header className="text-center mb-12 animate-fade-in">
           <div className="flex justify-center items-center gap-3 mb-4">
             <span className="text-6xl">☕</span>
@@ -161,11 +169,6 @@ export default function Index() {
 
         <footer className="text-center mt-16 text-white/80">
           <p className="text-lg">🎅 С Новым Годом от команды Кофе 55! 🎁</p>
-          <Link to="/orders">
-            <Button variant="ghost" className="text-white/30 hover:text-white/50 text-xs mt-4">
-              •
-            </Button>
-          </Link>
         </footer>
       </div>
     </div>
