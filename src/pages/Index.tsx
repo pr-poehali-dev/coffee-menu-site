@@ -3,6 +3,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
+import { Link } from 'react-router-dom';
 
 interface MenuItem {
   name: string;
@@ -88,6 +89,14 @@ export default function Index() {
 
       <div className="container mx-auto px-4 py-8 relative z-10">
         <header className="text-center mb-12 animate-fade-in">
+          <div className="flex justify-end mb-4">
+            <Link to="/orders">
+              <Button variant="outline" className="bg-white/95 hover:bg-white flex items-center gap-2">
+                <Icon name="ClipboardList" size={20} />
+                Управление заказами
+              </Button>
+            </Link>
+          </div>
           <div className="flex justify-center items-center gap-3 mb-4">
             <span className="text-6xl">☕</span>
             <h1 className="text-6xl md:text-7xl font-bold text-white drop-shadow-lg">
