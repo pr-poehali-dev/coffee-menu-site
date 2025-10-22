@@ -89,10 +89,10 @@ export default function Index() {
       />
 
       <div className="container mx-auto px-4 py-8 relative z-10">
-        <div className="absolute top-4 left-4">
+        <div className="absolute top-2 left-4">
           <Link to="/orders">
-            <Button variant="ghost" className="text-white/30 hover:text-white/60 text-2xl p-2 h-auto">
-              •
+            <Button variant="ghost" className="text-white/40 hover:text-white/70 text-xs p-2 h-auto">
+              управление заказами
             </Button>
           </Link>
         </div>
