@@ -28,6 +28,11 @@ const menuData = {
     { name: 'Сухари обычные', description: 'Хрустящие классические сухари из свежего хлеба', price: 0 },
     { name: 'Сухари в духовке с приправами', description: 'Ароматные сухари с чесноком, травами и специями', price: 0 },
   ],
+  icecream: [
+    { name: 'Мороженое огуречное', description: 'Освежающее мороженое с натуральным огуречным вкусом', price: 0 },
+    { name: 'Мороженое томатное', description: 'Необычное мороженое с томатами и базиликом', price: 0 },
+    { name: 'Мороженое с солёной карамелью', description: 'Нежное мороженое с идеальным балансом сладкого и солёного', price: 0 },
+  ],
   cocktails: [
     { name: 'Шоколадный коктейль', description: 'Насыщенный коктейль с бельгийским шоколадом и мороженым', price: 0 },
     { name: 'Молочный коктейль', description: 'Классический молочный коктейль с нежной пенкой', price: 0 },
@@ -80,6 +85,8 @@ export default function Index() {
         return 'Egg';
       case 'croutons':
         return 'Cookie';
+      case 'icecream':
+        return 'IceCream';
       case 'cocktails':
         return 'Wine';
       case 'salads':
@@ -125,7 +132,7 @@ export default function Index() {
         </header>
 
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full max-w-5xl mx-auto">
-          <TabsList className="grid w-full grid-cols-3 lg:grid-cols-6 mb-8 bg-white/95 backdrop-blur-sm p-2 h-auto gap-1">
+          <TabsList className="grid w-full grid-cols-3 lg:grid-cols-7 mb-8 bg-white/95 backdrop-blur-sm p-2 h-auto gap-1">
             <TabsTrigger value="coffee" className="flex flex-col items-center gap-2 py-3 data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary data-[state=active]:to-secondary data-[state=active]:text-white">
               <Icon name="Coffee" size={24} />
               <span className="text-sm md:text-base font-medium">Кофе</span>
@@ -137,6 +144,10 @@ export default function Index() {
             <TabsTrigger value="croutons" className="flex flex-col items-center gap-2 py-3 data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary data-[state=active]:to-secondary data-[state=active]:text-white">
               <Icon name="Cookie" size={24} />
               <span className="text-sm md:text-base font-medium">Сухари</span>
+            </TabsTrigger>
+            <TabsTrigger value="icecream" className="flex flex-col items-center gap-2 py-3 data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary data-[state=active]:to-secondary data-[state=active]:text-white">
+              <Icon name="IceCream" size={24} />
+              <span className="text-sm md:text-base font-medium">Мороженое</span>
             </TabsTrigger>
             <TabsTrigger value="cocktails" className="flex flex-col items-center gap-2 py-3 data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary data-[state=active]:to-secondary data-[state=active]:text-white">
               <Icon name="Wine" size={24} />
@@ -167,6 +178,7 @@ export default function Index() {
                             {category === 'coffee' && '☕'}
                             {category === 'eggs' && '🍳'}
                             {category === 'croutons' && '🍞'}
+                            {category === 'icecream' && '🍨'}
                             {category === 'cocktails' && '🍹'}
                             {category === 'salads' && '🥗'}
                             {category === 'juices' && '🧃'}
